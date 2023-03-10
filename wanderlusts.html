@@ -1,0 +1,453 @@
+<html lang="en">
+<head>
+        <title> Explore the realistic globe </title>
+    <link rel="stylesheet" href="tourism.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<script>
+
+<---------------------------------------------------------sign-up form validation-------------------------------------------------------->
+
+function validate()
+{
+if(document.myForm.fname.value==""){
+alert("please provide your first name!");
+document.myForm.fname.focus();
+return false;
+}
+if(document.myForm.lname.value=="")
+{
+alert("please provide your last name!");
+document.myForm.lname.focus();
+return false;
+}
+if(document.myForm.email.value==""){
+alert("please provide your Email address!");
+document.myForm.email.focus();
+return false;
+}
+if(document.myForm.pwd.value==""){
+alert("please enter your password!");
+document.myForm.pwd.focus();
+return false;
+}
+if(document.myForm.cpwd.value==""){
+alert("please confirm your password!");
+document.myForm.cpwd.focus();
+return false;
+}
+if(document.myForm.No.value==""){
+alert("please provide your contact number!");
+document.myForm.No.focus();
+return false;
+}
+if(document.myForm.accept.value=="")
+{
+alert("please accept the terms and condition!");
+document.myForm.accept.focus();
+return false;
+}
+return (true);
+}
+
+<------------------------------------------------------------Log-In form validation------------------------------------------->
+
+function validate1()
+{
+if(document.loginform.userid.value=="")
+{
+alert("please enter your user id!");
+document.loginform.userid.focus();
+return false;
+}
+if(document.loginform.pwd.value=="")
+{
+alert("please enter your password!");
+document.loginform.pwd.focus();
+return false;
+}
+var pswd = document.getElementById("pwd").value;
+   //check empty password field
+   if(pw == ""){
+   document.getElementById("message").innerHTML = "**Fill the password please!";
+   return false;
+   }
+   
+   //minimum password length validation
+   if(pswd.length<8){
+   document.getElementById("message").innerHTML = "**password should be within 8 characters!";
+   return false;
+   }
+   
+   //maximum password length validation
+   if(pswd.length>15){
+   document.getElementById("message").innerHTML = "**password length should not exceed more than 15 characters!";
+   return false;
+   } else {
+     alert("password is correct");
+   }
+return (true);
+}
+
+<------------------------------------------------------------password validation------------------------------------------------->
+
+</script>
+
+<body>
+
+<!..................................................Nav Bar................................................................................>
+<br> <br> 
+
+<nav class="navbar navbar-inverse">
+ <div class="container-fluid">
+  <div class="navbar-header">
+   <a class="navbar-brand" href="#"> Wander-Lust </a>
+  </div>
+ <div class="menu-bar">
+   <ul class="nav navbar-nav">                                              
+    <li class="active"><a href="#"> Home </a> </li>
+	
+	
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Company <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">History</a></li>
+          <li><a href="#">Awards & Achivements</a></li>
+        </ul>
+      </li>
+	  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Cruises <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Cardellia Cruises</a></li>
+          <li><a href="#">Norwegian Cruise Line </a></li>
+          <li><a href="#">Mediterrian Cruise</a></li>
+		  <li><a href="#">Greek Isles</a></li>
+        </ul>
+      </li>
+	  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Destinations <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Germany-Munich</a></li>
+          <li><a href="#">Italy-Venice</a></li>
+          <li><a href="#">Italy-Rome </a></li>
+		  <li><a href="#">Italy-Rome </a></li>
+		  <li><a href="#"> France-parris </a></li>
+		  <li><a href="#"> United Kingdom-London </a></li>
+          <li><a href="#"> Norway Oslo </a></li>	
+          <li class="divider"></li>
+          <li><a href="#"> Other european countries </a></li>	
+        </ul>
+      </li>
+	  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Travel styles <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#"> Package Holiday </a></li>
+	      <li><a href="#"> Budget traveller </a></li>
+		  <li><a href="#"> Road trip </a></li>
+		  <li><a href="#"> Adventure trip </a></li>
+        </ul>
+      </li>
+	  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Deals & Offers <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#"> Group and family discounts </a></li>
+	      <li><a href="#"> win a $1000 Voucher </a></li>
+        </ul>
+      </li>
+      
+   </ul>
+ </div>
+
+ <ul class="nav navbar-nav navbar-right">
+  <li><a href="#" data-toggle="modal" data-target="#signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> 
+  <li><a href="#" data-toggle="modal" data-target="#log-in"><span class="glyphicon glyphicon-log-in"></span> Log-In</a></li>
+ </ul>
+ 
+ <!..............................................................signupform........................................................>
+
+ <div id="signup" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"> <ins> Registration Form </ins> </h4>
+      </div>
+      <div class="modal-body" id= "Signup form">
+        <form name="myForm" onsubmit = return(validate());>
+		    <div class="form-group">
+		        <label> First Name: </label>
+				<input type="name" class="form-control input-sm" name="fname" placeholder="First name">			
+			
+				<label > Last Name: </label>
+				<input type="name" class="form-control" name="lname" placeholder="Last name">	        		
+			
+				<label >Email address:</label>
+				<input type="email" class="form-control" name="email" placeholder="enter your mail-id">			
+			
+				<label >Enter your Password:</label>
+				<input type="password" class="form-control" name="pwd" placeholder="enter your password">
+		
+				<label >Confirm your Password:</label>
+				<input type="password" class="form-control" name="cpwd" placeholder="confirm your password">
+	      
+				<label >Phone Number</label>
+				<input type="Number" class="form-control" name="No" placeholder="Contact Number">
+	        </div>			
+			<div class="checkbox">
+				<label><input type="checkbox" id="accept"> I accept the Terms of use & Privacy Policy </label>
+			</div>
+            <button type="submit" class="btn btn-primary"> Register Now </button>
+        </form>
+      </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+    </div>
+   </div>
+</div>
+
+	
+<!....................................................................Loginform...................................................................>
+	
+<div id="log-in" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+		
+	<div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><ins>Log In;</ins> </h4>
+      </div>
+	  <div class="modal-body" id="Login form">   
+	  
+		<form name="loginform" onsubmit = return(validate1());>
+		    <div class="form-group">
+		        <label for="first name">UserId</label>
+				<input type="mail" class="form-control" name="userid" id="mail" placeholder="enter your user-id" >
+			</div>
+			<div class="form-group">
+		        <label for="first name">Password</label>
+				<input type="mail" class="form-control" name="pwd" id="pwd" placeholder="enter your credential" >
+			</div>
+			<div class="checkbox">
+			    <label><input type="checkbox">Remember me</label>
+			</div>
+			<button type="submit" class="btn btn-primary">Log In</button>
+	    </form>
+	  </div>
+    </div>
+   </div>
+  </div>
+</nav>
+ 
+<div class="jumbotron text-center">
+<h1> <i> Wander-Lust Tourism </i></h1>
+<p> Our tourism care about our travelers with the utmost transparency and quality services.<br>
+ As one of the trusted travel agents in <b> " europe continent " </b> we keen to assist you with all your travel needs in comfortable aspects.
+</p>
+
+<!.........................................................Long-Search bar................................................>
+<div class="container">
+    <form>
+	  <div class="input-group">
+       <input type="text" class="form-control input-lg" placeholder="Search a country or city" name="search">
+	    <div class="input-group-btn">
+           <button class="btn btn-default btn-sm" type="submit">
+	       <i class="glyphicon glyphicon-search"></i></button>
+	    </div>
+	  </div>
+	</form>
+</div>
+
+</div>
+<!............................................................. Carousel......................................................>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+	<li data-target="#myCarousel" data-slide-to="1"></li>
+	<li data-target="#myCarousel" data-slide-to="2"></li>
+	<li data-target="#myCarousel" data-slide-to="3"></li>
+	<li data-target="#myCarousel" data-slide-to="4"></li>	
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="C:\Users\sarav\OneDrive\Desktop\web pictures\carousel images\global.jpg"  alt="globe" style="width:100%;">
+      <div class="carousel-caption">
+        <h1> Wonders of Globe </h1>
+		<h2> "We wander for distractions, But we travel for fulfilment"</h2>
+		<h3> <i> - Destinations of world <br> Dreams doesnt have an expire date. </i> </h3>
+      </div>
+    </div>
+	
+    <div class="item">
+      <img src="C:\Users\sarav\OneDrive\Desktop\web pictures\carousel images\adventure.jpg" alt="adventure" style="width:100%;">
+    </div>
+
+    <div class="item">
+      <img src="C:\Users\sarav\OneDrive\Desktop\web pictures\carousel images\mountaineering.jpg"  alt="mountaineering" style="width:100%;">
+    </div>
+
+    <div class="item">
+      <img src="C:\Users\sarav\OneDrive\Desktop\web pictures\carousel images\cruise.jpg"   alt="cruises" style="width:100%;">
+    </div>
+	
+	<div class="item">
+      <img src="C:\Users\sarav\OneDrive\Desktop\web pictures\carousel images\forest.jpg"  alt="forest" style="width:100%;">      
+    </div>
+	
+    
+</div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<br> 
+
+<div class="container">
+<h2> Welcome to the Wander-Lust Tourism </h2>
+<span> Wander-Lust Tourism Pvt. Ltd is a subsidiary of Sangam Group of Hotels, one of the biggest hotel chains in south East asia. 
+       The Sangam Group of Hotels founded in 1968 has for forty years provided impeccable service and outstanding hospitality. 
+	   It currently has 19 properties in Europe. Wander-Lust Pvt. Ltd built on this strong foundation aims to provide great customer satisfaction and an exemplary holiday experience.
+	   Planning a once in a lifetime holiday or a yearly corporate retreat? No problem! Wander-lust Holidays can get you what you want and in the minimal time.
+	   One of the best destination management companies in South India, it has the experience and infrastructure to handle any customer demand.
+	   In addition to destination management, Wander-Lust Tourism also plans corporate tours, incentive trips, college/school excursions, business travel,
+	   arranges car/railway & hotel bookings and much, much more.
+	   
+	   Discover what makes Wander-lust Tourism and its offerings distinct from the rest of the pack and indispensable to its customers.
+	   
+	   </span>
+	   <br> <br> <br>
+
+<div class="jumbotron text-center">
+ <h1> Exploring the vintage continents </h1>
+ <h3> "Best historical sites in europe cities, So significantly you cant miss them" </h3>
+</div>
+
+ <br> <br>
+ 
+ <div style="color:purple" class="container">
+ <h1> <i> Popular European Countries : </i> </h1>
+ </div>
+  
+ <div class="container">
+
+ <div class="row">
+    <div class="col-sm-4" style="color:#8B0000;"> 
+	  <h3> <b> Venice </b> </h3>
+	  <span> Queen of the adriatic and city of canals, masks and bridges-there is no shortage of fascinating facts about venice! </span>
+	</div>
+    <div class="col-sm-4" style="color:#8B0000;">
+	  <h3> <b> France - Parris </b> </h3>
+      <span> Paris is ALWAYS a good idea, but there’s an extra sprinkle of magic to the city in the colder months. Find out the best things to do in Paris in winter, and start planning your adventure! </span>	
+	</div>
+    <div class="col-sm-4" style="color:#8B0000;"> 
+	  <h3> <b> German-Munich </b> </h3>
+	  <span> fairy-tale towns to adrenaline-fuelled adventures at one of munich best theme parks, it’s time to find out the best things to do in the Black Forest In Germany in summer.  </span>
+	</div>
+ </div>
+ 
+ <br> <br> <br>
+ 
+ <div class="row">
+    <div class="col-sm-4" style="color:#8B0000;"> 
+	  <h3> <b> Norway - oslo </b> </h3>
+	  <span> There are plenty of unique things to do in Norwich, from arts and crafts workshops, to food experiences. Time to share all the fun from my Microgap in the city.  </span>
+	</div>
+	<div class="col-sm-4" style="color:#8B0000;"> 
+	  <h3> <b> uk - london </b> </h3>
+	  <span> The top things to do in London include visiting gourmet restaurants,Buckinghamshire and charming cafes, enjoying the historic architecture and going on some beautiful walks too.  </span>
+	</div>
+	<div class="col-sm-4" style="color:#8B0000;"> 
+	  <h3> <b> Rome </b> </h3>
+	  <span> Rome is a city filled with wonder. Everywhere you walk you see incredible historic monuments, churches, fountains and intriguing landmarks. It’s somewhere to explore with your eyes and ears wide open. </span>
+	</div>
+ </div>
+ 
+ </div>
+ 
+ 
+ 
+ <!............................................................Thumbnail-portfolio & carousel..........................................................>
+ 
+ <div style="color:purple" class="container">
+  <h1> <i>Stress-free lusty Holidays : </i> </h1>
+ </div>
+ 
+ <div style="color:brown" class="container">
+   <h2>International Packages</h2><br>
+   <h4><i>What we have offer</i></h4>
+ </div>
+ 
+
+ <div class="row text-center">
+  <div class="col-sm-4">
+    <div class="thumbnail">
+	  <img src="C:\Users\sarav\OneDrive\Desktop\web pictures\carousel images\EMI-Option-GT-Holidays-768x1086.jpg" alt="offer 1" width="300" height="300">
+	</div>
+  </div>
+  <div class="col-sm-4">
+    <div class="thumbnail">
+	  <img src="C:\Users\sarav\OneDrive\Desktop\web pictures\carousel images\EMI-Options-for-GT-Holidays-768x1086.jpg" alt="Paris" width="300" height="300" >
+	</div>
+  </div>
+  <div class="col-sm-4">
+    <div class="thumbnail">
+	  <img src= "C:\Users\sarav\OneDrive\Desktop\web pictures\carousel images\EMI-Options-GT-Holidays-768x1086.jpg" alt="Paris" width="300" height="300">
+	</div>
+  </div>
+  <div class="col-sm-4">
+    <div class="thumbnail">
+	  <img src="C:\Users\sarav\OneDrive\Desktop\web pictures\carousel images\GT-Holidays-EMI-Option-768x1086.jpg" alt="Paris" width="300" height="300" >
+	</div>
+  </div>
+  <div class="col-sm-4">
+    <div class="thumbnail">
+	  <img src="C:\Users\sarav\OneDrive\Desktop\web pictures\carousel images\GT-Holidays-EMI-Options-768x1086.jpg" alt="Paris" width="300" height="300" >
+	</div>
+  </div>
+ </div>
+</div>
+ 
+ 
+ <div class="container">
+   <h2> Cordellia Cruises </h2>
+     <div class="jumbotron text-center">
+	   <img src="C:\Users\sarav\OneDrive\Desktop\web pictures\carousel images\cruises.jpg"     alt="cruises" width="900"  height="400"   >
+	 </div>
+	      <span> Cordellia cruises is joint venture with wander lust tourism organisation since 1988. It was established around the globe. 
+	             We are one of the official ticket booking partners of Cordelia Cruises.Make your journey as beautiful and exciting as the destination  
+	             you’re headed to while on a cruise vacation! So sit back, relax and rejuvenate for an inspirational retreat with us. 
+		         Our premium and stylish yet comfortable cruise ship staterooms will help you re-energize after a day full of entertainment and activities onboard.
+				 
+		  </span>
+ </div> 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+</body>
+</head>
+</html>
+
+	
+
+
